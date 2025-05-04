@@ -8,7 +8,7 @@ const Email = () => {
   useEffect(() => {
     if (email) {
       // Send the email to the API here when the component mounts
-      fetch('http://localhost:8000/user/waitlist', {
+      fetch(`${import.meta.env.VITE_API_URL}/user/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
