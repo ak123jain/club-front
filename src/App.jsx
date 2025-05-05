@@ -3,6 +3,7 @@
 import Hero from './components/Hero'
 import './index.css'
 import Email from './Pages/Email'
+import { Analytics } from "@vercel/analytics/react"
  
  
  const App = () => {
@@ -13,6 +14,7 @@ import Email from './Pages/Email'
          <Route path='/sendemail' element={<Email />} />
          <Route path='/contact' element={<h1>Contact</h1>} />
        </Routes>
+       <Analytics />
      </div>
    )
  }
