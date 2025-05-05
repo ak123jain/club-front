@@ -130,6 +130,8 @@
 // };
 
 // export default Hero;
+ 
+
 import React from 'react';
 import { Bell, Calendar, Award, Users, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -148,10 +150,12 @@ const Hero = () => {
 
   return (
     <section
-      className="relative text-white px-6 py-16 md:py-24 overflow-hidden bg-no-repeat bg-start bg-contain min-h-[600px]"
+      className="relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black md:bg-no-repeat md:bg-start md:bg-contain"
       style={{
         backgroundImage: `url(${clock})`,
-        backgroundColor: '#000',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'left top',
       }}
     >
       {/* Dark overlay */}
@@ -200,37 +204,32 @@ const Hero = () => {
 
         {/* Features Grid with Glassmorphism */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
-            <Bell className="text-orange-400 mb-4" size={28} />
-            <h2 className="text-xl font-semibold mb-2">Stay in the Loop</h2>
-            <p className="text-gray-300">
-              Be the first to know when clubs post new events. No more last-minute updates or missed opportunities.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
-            <Calendar className="text-orange-400 mb-4" size={28} />
-            <h2 className="text-xl font-semibold mb-2">One Platform</h2>
-            <p className="text-gray-300">
-              Access all club events in one place with instant notifications and one-click event registration.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
-            <Award className="text-orange-400 mb-4" size={28} />
-            <h2 className="text-xl font-semibold mb-2">Digital Certificates</h2>
-            <p className="text-gray-300">
-              Earn and showcase your participation with digital credentials that enhance your professional profile.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
-            <Users className="text-orange-400 mb-4" size={28} />
-            <h2 className="text-xl font-semibold mb-2">For Everyone</h2>
-            <p className="text-gray-300">
-              Whether you're organizing the next big event or just don't want to miss it — CampusLink is built for you.
-            </p>
-          </div>
+          {[{
+            icon: <Bell className="text-orange-400 mb-4" size={28} />,
+            title: 'Stay in the Loop',
+            desc: 'Be the first to know when clubs post new events. No more last-minute updates or missed opportunities.'
+          }, {
+            icon: <Calendar className="text-orange-400 mb-4" size={28} />,
+            title: 'One Platform',
+            desc: 'Access all club events in one place with instant notifications and one-click event registration.'
+          }, {
+            icon: <Award className="text-orange-400 mb-4" size={28} />,
+            title: 'Digital Certificates',
+            desc: 'Earn and showcase your participation with digital credentials that enhance your professional profile.'
+          }, {
+            icon: <Users className="text-orange-400 mb-4" size={28} />,
+            title: 'For Everyone',
+            desc: 'Whether you’re organizing the next big event or just don’t want to miss it — CampusLink is built for you.'
+          }].map((feature, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500"
+            >
+              {feature.icon}
+              <h2 className="text-xl font-semibold mb-2">{feature.title}</h2>
+              <p className="text-gray-300">{feature.desc}</p>
+            </div>
+          ))}
         </div>
 
         {/* CTA Footer */}
