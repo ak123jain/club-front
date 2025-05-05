@@ -208,7 +208,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl mb-6 font-light">
-            All your campus Events. zero
+            Find All your campus Events. zero
             <span className="text-orange-400 font-semibold"> FOMO</span>
           </p>
 
