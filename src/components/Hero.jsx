@@ -77,7 +77,7 @@
 
 //         {/* Features grid with modern card design */}
 //         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
+//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-orange-700 transition duration-300">
 //             <Bell className="text-blue-400 mb-4" size={28} />
 //             <h2 className="text-xl font-semibold mb-2">Stay in the Loop</h2>
 //             <p className="text-gray-400">
@@ -85,7 +85,7 @@
 //             </p>
 //           </div>
           
-//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
+//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-orange-700 transition duration-300">
 //             <Calendar className="text-blue-400 mb-4" size={28} />
 //             <h2 className="text-xl font-semibold mb-2">One Platform</h2>
 //             <p className="text-gray-400">
@@ -93,7 +93,7 @@
 //             </p>
 //           </div>
           
-//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
+//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-orange-700 transition duration-300">
 //             <Award className="text-blue-400 mb-4" size={28} />
 //             <h2 className="text-xl font-semibold mb-2">Digital Certificates</h2>
 //             <p className="text-gray-400">
@@ -101,7 +101,7 @@
 //             </p>
 //           </div>
           
-//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
+//           <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-orange-700 transition duration-300">
 //             <Users className="text-blue-400 mb-4" size={28} />
 //             <h2 className="text-xl font-semibold mb-2">For Everyone</h2>
 //             <p className="text-gray-400">
@@ -130,8 +130,6 @@
 // };
 
 // export default Hero;
-
-
 import React from 'react';
 import { Bell, Calendar, Award, Users, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -153,7 +151,7 @@ const Hero = () => {
       className="relative text-white px-6 py-16 md:py-24 overflow-hidden bg-no-repeat bg-start bg-contain min-h-[600px]"
       style={{
         backgroundImage: `url(${clock})`,
-        backgroundColor: '#000', // fallback color
+        backgroundColor: '#000',
       }}
     >
       {/* Dark overlay */}
@@ -200,36 +198,36 @@ const Hero = () => {
           </form>
         </div>
 
-        {/* Features Grid */}
+        {/* Features Grid with Glassmorphism */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
-            <Bell className="text-blue-400 mb-4" size={28} />
+          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
+            <Bell className="text-orange-400 mb-4" size={28} />
             <h2 className="text-xl font-semibold mb-2">Stay in the Loop</h2>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               Be the first to know when clubs post new events. No more last-minute updates or missed opportunities.
             </p>
           </div>
 
-          <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
-            <Calendar className="text-blue-400 mb-4" size={28} />
+          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
+            <Calendar className="text-orange-400 mb-4" size={28} />
             <h2 className="text-xl font-semibold mb-2">One Platform</h2>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               Access all club events in one place with instant notifications and one-click event registration.
             </p>
           </div>
 
-          <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
-            <Award className="text-blue-400 mb-4" size={28} />
+          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
+            <Award className="text-orange-400 mb-4" size={28} />
             <h2 className="text-xl font-semibold mb-2">Digital Certificates</h2>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               Earn and showcase your participation with digital credentials that enhance your professional profile.
             </p>
           </div>
 
-          <div className="p-6 border border-gray-800 rounded-lg bg-gray-900 bg-opacity-40 backdrop-blur-sm hover:border-blue-700 transition duration-300">
-            <Users className="text-blue-400 mb-4" size={28} />
+          <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition duration-300 hover:border-orange-500">
+            <Users className="text-orange-400 mb-4" size={28} />
             <h2 className="text-xl font-semibold mb-2">For Everyone</h2>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               Whether you're organizing the next big event or just don't want to miss it — CampusLink is built for you.
             </p>
           </div>
