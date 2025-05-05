@@ -163,9 +163,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black ${
-        isMobile ? 'border-t border-b border-white' : ''
-      }`}
+      className={`relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black`}
       style={
         isMobile
           ? {} // No image on mobile
@@ -179,6 +177,18 @@ const Hero = () => {
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+
+      {/* Grid of 6 background lines for mobile */}
+      {isMobile && (
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-4 z-0">
+          <div className="border-t border-white"></div>
+          <div className="border-t border-white"></div>
+          <div className="border-t border-white"></div>
+          <div className="border-l border-white"></div>
+          <div className="border-l border-white"></div>
+          <div className="border-l border-white"></div>
+        </div>
+      )}
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
