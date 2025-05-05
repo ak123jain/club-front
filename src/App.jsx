@@ -14,7 +14,6 @@ import { Analytics } from "@vercel/analytics/react"
          <Route path='/sendemail' element={<Email />} />
          <Route path='/contact' element={<h1>Contact</h1>} />
        </Routes>
-       <Analytics />
      </div>
    )
  }
