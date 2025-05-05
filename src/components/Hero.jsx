@@ -140,6 +140,19 @@ import clock from '../assets/clocktower.png';
 const Hero = () => {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  // Check screen size
+  React.useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's md breakpoint
+    };
+
+    checkScreenSize(); // initial check
+    window.addEventListener('resize', checkScreenSize); // update on resize
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -150,13 +163,17 @@ const Hero = () => {
 
   return (
     <section
-      className="relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black md:bg-no-repeat md:bg-start md:bg-contain"
-      style={{
-        backgroundImage: `url(${clock})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'left top',
-      }}
+      className="relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black"
+      style={
+        isMobile
+          ? {} // No image on mobile
+          : {
+              backgroundImage: `url(${clock})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'left top',
+            }
+      }
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
