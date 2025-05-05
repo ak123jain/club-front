@@ -163,7 +163,9 @@ const Hero = () => {
 
   return (
     <section
-      className="relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black"
+      className={`relative text-white px-6 py-16 md:py-24 overflow-hidden min-h-[600px] bg-black ${
+        isMobile ? 'border-t border-b border-white' : ''
+      }`}
       style={
         isMobile
           ? {} // No image on mobile
